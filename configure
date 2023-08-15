@@ -1,0 +1,8 @@
+#!/bin/bash
+
+if [[ "$CC" == *"emcc" ]]; then
+  echo "Emscripten detected, using emconfigure"
+  emconfigure ./configure.orig cross_compiling=yes
+else
+  ./configure.orig
+fi
